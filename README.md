@@ -86,7 +86,6 @@ Salva um novo usuário no Redis.
 
 - Corpo (JSON):
 ```
-Copiar código
 {
   "id": "1",
   "name": "John Doe",
