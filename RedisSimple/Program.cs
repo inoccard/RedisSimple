@@ -1,3 +1,4 @@
+using RedisSimple.Services;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,8 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(sp =>
     var configuration = ConfigurationOptions.Parse(connection, true);
     return ConnectionMultiplexer.Connect(configuration);
 });
+
+builder.Services.AddScoped<IRedisService, RedisService>();
 
 var app = builder.Build();
 
